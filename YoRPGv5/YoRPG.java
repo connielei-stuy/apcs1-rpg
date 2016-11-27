@@ -118,6 +118,7 @@ public class YoRPG
       Returns false if monster wins (player dies).
       =============================================*/
     int weapon = 0;
+    int armor = 0;
     public boolean playTurn()
     {
 	int i = 1;
@@ -150,6 +151,10 @@ public class YoRPG
             pat.strength=(int)(pat.strength*1.3);
             pat.defense=(int)(pat.defense*.8);
         }
+        if (armor == 1){
+            pat.strength=(int)(pat.strength*.8);
+            pat.defense=(int)(pat.defense*1.3);
+        }
 		d1 = pat.attack( smaug );
 		d2 = smaug.attack( pat );
 
@@ -172,14 +177,18 @@ public class YoRPG
 	    else if ( !smaug.isAlive() ) {
 		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
 		try {
-		    System.out.println( "\nA new weapon has appeared!" );
-		    System.out.println( "\t1: Pick it up! \n\t2: I don't need an extra weapon!");
+		    System.out.println( "\nThe monster dropped his booty!" );
+		    System.out.println( "\t1: Pick up the weapon! \n\t2: Pick up the armor!\n\t3: I don't need anythin'!");
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
         if ( i == 1 ){
             weapon=1;
             System.out.println("You will be stronger, but it is now harder to defend yourself!");
+        }
+        else if (i == 2){
+            armor=1;
+            System.out.println("You will be weaker, but it is now easier to defend yourself!");
         }
         else
             System.out.println(" Interesting choice..."); 
