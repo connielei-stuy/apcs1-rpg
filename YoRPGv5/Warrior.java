@@ -4,7 +4,7 @@ public class Warrior extends Character{
 	health = 125;
 	strength = 80;
 	defense = 90;
-	attackR = 0.2;
+	attackR = 0.4;
     }
     
     public void normalize(){
