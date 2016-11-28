@@ -136,14 +136,18 @@ public class YoRPG
 			try{
 				System.out.println("\nYour health is low! Splash health potion?");
 				System.out.println("\t1:Nay.\n\t2: Aye!");
+				i = Integer.parseInt(in.readLine());
 			}
 			catch (IOException e){}
-			int healthGain = (int)(Math.random() * 21);
-			pat.health = pat.health + healthGain;
-			System.out.println("\nYou have regained " + healthGain + "health.");
-			healthGain = (int)Math.random() * 21;
-			smaug.health = (smaug.health + healthGain);
-			System.out.println("\nThe monster has regained" + healthGain + "health.");
+			if (i == 1){}
+			else{
+				int healthGain = (int)(Math.random() * 21);
+				pat.health = pat.health + healthGain;
+				System.out.println("\nYou have regained " + healthGain + "health.");
+				healthGain = (int)Math.random() * 21;
+				smaug.health = (smaug.health + healthGain);
+				System.out.println("\nThe monster has regained" + healthGain + "health.");
+			}
 		}
 					
 		// Give user the option of using a special attack:
