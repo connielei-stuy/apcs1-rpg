@@ -12,6 +12,11 @@ public class Mage extends Character{
 	defense = 30;
     }
     
+    public void specialize(){
+	strength  = 130;
+	defense = 25;
+    }	    
+	
     public String about(){
 	return "Mage\nHealth: " + health + "\nStrength: " + strength + "\nDefense: " + defense + "\nAttack Rating: " + attackR;
     }
