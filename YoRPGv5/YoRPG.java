@@ -132,7 +132,20 @@ public class YoRPG
 	    smaug = new Monster();
 
 	    while( smaug.isAlive() && pat.isAlive() ) {
-
+		if (pat.health < 20) {
+			try{
+				System.out.println("\nYour health is low! Splash health potion?");
+				System.out.println("\t1:Nay.\n\t2: Aye!");
+			}
+			catch (IOException e){}
+			int healthGain = (int)(Math.random() * 21);
+			pat.health = pat.health + healthGain;
+			System.out.println("\nYou have regained " + healthGain + "health.");
+			healthGain = (int)Math.random() * 21;
+			smaug.health = (smaug.health + healthGain);
+			System.out.println("\nThe monster has regained" + healthGain + "health.");
+		}
+					
 		// Give user the option of using a special attack:
 		// If you land a hit, you incur greater damage,
 		// ...but if you get hit, you take more damage.
@@ -147,14 +160,14 @@ public class YoRPG
 		    pat.specialize();
 		else
 		    pat.normalize();
-        if (weapon == 1){
-            pat.strength=(int)(pat.strength*1.3);
-            pat.defense=(int)(pat.defense*.8);
-        }
-        if (armor == 1){
-            pat.strength=(int)(pat.strength*.8);
-            pat.defense=(int)(pat.defense*1.3);
-        }
+      		if (weapon == 1){
+            	    pat.strength=(int)(pat.strength*1.3);
+                    pat.defense=(int)(pat.defense*.8);
+		}
+        	if (armor == 1){
+            	    pat.strength=(int)(pat.strength*.8);
+            	    pat.defense=(int)(pat.defense*1.3);
+        	}
 		d1 = pat.attack( smaug );
 		d2 = smaug.attack( pat );
 
