@@ -7,6 +7,11 @@ public class Assassin extends Character{
 	attackR = 1.2;
     }
 
+    public void specialize(){
+	strength = 130;
+	defense = 0;
+    }
+	
     public void normalize(){
 	strength = 125;
 	defense = 0;
