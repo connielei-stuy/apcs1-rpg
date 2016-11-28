@@ -9,7 +9,7 @@ public class Monster extends Character{
     }
 
     public void normalize(){};
-    
+    public void specialize(){};
     public String about(){
 	return "Monster\nHealth: " + health + "\nStrength: " + strength + "\nDefense: " + defense + "\nAttack Rating: " + attackR;
     }
