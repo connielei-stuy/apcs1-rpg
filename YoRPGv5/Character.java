@@ -21,11 +21,6 @@ public abstract class Character{
 	health = health - damage;
     }
 
-    public void specialize() {
-	strength += 5;
-	defense -= 5;
-    }
-
     public int attack(Character enemy){
 	int damage = (int) ((strength * attackR) - enemy.getDefense());
 	if (damage < 0)
@@ -35,6 +30,6 @@ public abstract class Character{
     }
 
     public abstract void normalize();
-    
+    public abstract void specialize();
     public abstract String about();
 }
