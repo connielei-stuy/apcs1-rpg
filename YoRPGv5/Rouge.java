@@ -11,7 +11,12 @@ public class Rouge extends Character{
 	strength = 100;
 	defense = 45;
     }
-    
+   
+    public void specialize(){
+	 strength = 105;
+	 defense = 40;
+    }
+	
     public String about(){
 	return	"Rouge\nHealth: " + health + "\nStrength: " + strength + "\nDefense: " + defense + "\nAttack Rating: " + attackR;
     }
